@@ -2,7 +2,11 @@ import './style.css';
 
 const Header = () => {
 
-  const view = ``;
+  const view = `
+    <nav>
+      Countries
+    </nav>
+  `;
 
   return view;
 }
