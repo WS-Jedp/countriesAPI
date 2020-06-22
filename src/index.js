@@ -1,6 +1,7 @@
-import './assets/styles/main.css';
+import './assets/styles/main.module.css';
 import Header from './components/Header/Header';
 
-const header = document.getElementById('header');
+import router from './routes/routes';
 
-header.innerHTML = Header();
+window.addEventListener('load', router);
+window.addEventListener('hashchange', router);
