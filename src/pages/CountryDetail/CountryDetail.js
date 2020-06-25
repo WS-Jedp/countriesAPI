@@ -3,12 +3,13 @@ import gethash from '../../routes/getHash';
 import { getCountry } from '../../services/countries';
 
 const CountryDetail = async () => {
-  console.log(getHash());
+  let name = location.hash.slice(1).toLocaleLowerCase().split('/')[2];
   const serviceCountry = await getCountry(name);
+  console.log(serviceCountry);
   const countryData = serviceCountry[0];
   const view = `
     <section class="${styles.country}">
-      <a class="${styles.country__back}">
+      <a class="${styles.country__back}" href="#/">
         Back
       </a>
 
@@ -38,7 +39,7 @@ const CountryDetail = async () => {
               </li>
               <li>
                 <p>
-                  <strong>Sub Region:</strong> ${countryData.subRegion} 
+                  <strong>Sub Region:</strong> ${countryData.subregion} 
                 </p>
               </li>
               <li>

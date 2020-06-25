@@ -14,8 +14,6 @@ const routes = {
 }
 
 const router = async () => {
-  console.log(getHash());
-  console.log(resolveRoute(getHash()));
   const header = document.getElementById('header');
   const app = document.getElementById('app');
 

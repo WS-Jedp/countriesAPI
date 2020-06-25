@@ -1,9 +1,10 @@
 const resolveRoute = (route) => {
-  if(route.length <= 3){
-    let validateRoute = route === '/' ? route : ':id';
-    return validateRoute;
-  }
-  return `/${route}`
+  let currentRoute = location.hash.slice(1).toLocaleLowerCase().split('/')
+  
+  if(currentRoute.includes('country')) return '/:id'
+  else  return `/`;
+
+  
 }
 
 export default resolveRoute;

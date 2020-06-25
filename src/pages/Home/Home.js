@@ -2,7 +2,7 @@
 import styles from './styles.module.css';
 
 // services
-import {getCountries} from '../../services/countries';
+  import {getCountries} from '../../services/countries';
 
 // Components
 import Card from '../../components/Card/Card';
