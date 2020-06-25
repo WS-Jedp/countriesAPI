@@ -20,3 +20,15 @@ header{
   width: 100%;
   height: 100%;
 }
+
+@media only screen and (max-width: 400px){
+
+  header {
+    height: auto;
+  }
+
+  .myHeader {
+    padding: var(--space-normal) 0;
+    flex-flow: column;
+  }
+}

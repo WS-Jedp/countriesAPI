@@ -3,8 +3,8 @@ import styles from './styles.module.css';
 // Services
 const Card = (flag, name, population, region, capital ) => {
   const view = `
+  <article class="${styles.card}">
     <a href="#/country/${name}">
-      <article class="${styles.card}">
         <figure class="${styles.card__image}">
           <img src="${flag}" alt="${name}"></img>
         </figure>
@@ -20,8 +20,8 @@ const Card = (flag, name, population, region, capital ) => {
             <strong>Capital:</strong> ${capital}
           </p>
         </div>
-      </article>
-    </a>
+      </a>
+    </article>
   `;
 
   return view;
