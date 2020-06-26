@@ -5,8 +5,8 @@ import { getCountry } from '../../services/countries';
 const CountryDetail = async () => {
   let name = location.hash.slice(1).toLocaleLowerCase().split('/')[2];
   const serviceCountry = await getCountry(name);
-  console.log(serviceCountry);
   const countryData = serviceCountry[0];
+  countryData.population = new Intl.NumberFormat('de-DE').format(Number(countryData.population))
   const view = `
     <section class="${styles.country}">
       <a class="${styles.country__back}" href="#/">
@@ -34,7 +34,7 @@ const CountryDetail = async () => {
               </li>
               <li>
                 <p>
-                  <strong>Region:</strong> ${countryData.population} 
+                  <strong>Region:</strong> ${countryData.region} 
                 </p>
               </li>
               <li>
@@ -70,7 +70,7 @@ const CountryDetail = async () => {
           <p class="${styles.country__borders}">
             <strong>Border countries:</strong>
               ${countryData.borders.map(data => `<a>${data}</a>`).join('')}
-          </p>
+          </p>  
         </div>
       </article>
     </section>

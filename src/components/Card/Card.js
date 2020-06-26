@@ -2,6 +2,9 @@ import styles from './styles.module.css';
 
 // Services
 const Card = (flag, name, population, region, capital ) => {
+
+  population = new Intl.NumberFormat('de-DE').format(Number(population))
+
   const view = `
   <article class="${styles.card}">
     <a href="#/country/${name}">
